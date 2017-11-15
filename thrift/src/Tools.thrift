@@ -5,9 +5,9 @@ namespace py example
 
 enum C
 {
-  f,
-  g,
-  h
+  F,
+  G,
+  H
 }
 
 struct B
