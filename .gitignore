@@ -1,0 +1,13 @@
+# Temporary Files
+*~
+/thrift/gen-*
+
+# C++
+*.out
+
+# C#
+*.exe
+*.dll
+
+# Java
+*.class

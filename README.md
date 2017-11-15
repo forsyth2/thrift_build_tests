@@ -1,2 +1,2 @@
-# thrift_build_tests
+# Thrift Build Tests
 Test builds that use Thrift
