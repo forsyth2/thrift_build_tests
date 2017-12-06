@@ -30,26 +30,26 @@ def remove_all_generated():
 
 # Test that Thrift builds properly #############################################
 class BuildTester(unittest.TestCase):
-    def test_cpp(self):
-        self.assertEqual(os.system(generate_files(CPP)), 0)
-        self.assertEqual(os.system('c++ -std=c++11 %s/tests/languages/cpp_server.cpp' % DIRECTORY), 0)
-        self.assertEqual(os.system(remove_generated_files(CPP)), 0)
-        self.assertEqual(os.system('rm a.out'), 0)
-
-    def test_csharp(self):
-        self.assertEqual(os.system(generate_files(CSHARP)), 0)
-        self.assertEqual(os.system('mcs /warnaserror /t:library /out:generated.dll /reference:thrift.dll %s/thrift/gen-csharp/example/*.cs' % DIRECTORY), 0)
-        self.assertEqual(os.system('mcs /warnaserror /reference:generated.dll /reference:thrift.dll %s/tests/languages/CsharpServer/CsharpServer.cs' % DIRECTORY), 0)
-        self.assertEqual(os.system(remove_generated_files(CSHARP)), 0)
-        self.assertEqual(os.system('rm %s/tests/languages/CsharpServer/CsharpServer.exe' % DIRECTORY), 0)
-        self.assertEqual(os.system('rm thrift.dll'), 0)
-        self.assertEqual(os.system('rm generated.dll'), 0)
-
-    def test_java(self):
-        self.assertEqual(os.system(generate_files(JAVA)), 0)
-        self.assertEqual(os.system('javac %s/languages/JavaServer.java' % DIRECTORY), 0)
-        self.assertEqual(os.system(remove_generated_files(JAVA)), 0)
-        self.assertEqual(os.system('rm %s/languages/JavaServer.class' % DIRECTORY), 0)
+    # def test_cpp(self):
+    #     self.assertEqual(os.system(generate_files(CPP)), 0)
+    #     self.assertEqual(os.system('c++ -std=c++11 %s/tests/languages/cpp_server.cpp' % DIRECTORY), 0)
+    #     self.assertEqual(os.system(remove_generated_files(CPP)), 0)
+    #     self.assertEqual(os.system('rm a.out'), 0)
+    #
+    # def test_csharp(self):
+    #     self.assertEqual(os.system(generate_files(CSHARP)), 0)
+    #     self.assertEqual(os.system('mcs /warnaserror /t:library /out:generated.dll /reference:thrift.dll %s/thrift/gen-csharp/example/*.cs' % DIRECTORY), 0)
+    #     self.assertEqual(os.system('mcs /warnaserror /reference:generated.dll /reference:thrift.dll %s/tests/languages/CsharpServer/CsharpServer.cs' % DIRECTORY), 0)
+    #     self.assertEqual(os.system(remove_generated_files(CSHARP)), 0)
+    #     self.assertEqual(os.system('rm %s/tests/languages/CsharpServer/CsharpServer.exe' % DIRECTORY), 0)
+    #     self.assertEqual(os.system('rm thrift.dll'), 0)
+    #     self.assertEqual(os.system('rm generated.dll'), 0)
+    #
+    # def test_java(self):
+    #     self.assertEqual(os.system(generate_files(JAVA)), 0)
+    #     self.assertEqual(os.system('javac %s/languages/JavaServer.java' % DIRECTORY), 0)
+    #     self.assertEqual(os.system(remove_generated_files(JAVA)), 0)
+    #     self.assertEqual(os.system('rm %s/languages/JavaServer.class' % DIRECTORY), 0)
 
     def test_python(self):
         self.assertEqual(os.system(generate_files(PYTHON)), 0)
