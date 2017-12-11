@@ -1,5 +1,6 @@
 import sys
-sys.path.insert(0, '../thrift/gen-py')
+DIRECTORY = subprocess.check_output('git rev-parse --show-toplevel'.split()).strip()
+sys.path.insert(0, '%s/thrift/gen-py' % DIRECTORY)
 
 import Tools.ttypes;
 import ProcessorService.Processor;

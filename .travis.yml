@@ -1,16 +1,12 @@
-matrix:
-  before_install:
-    # Taken from https://github.com/travis-ci/travis-ci/issues/2478
-    - sudo apt-get update -qq
-    - sudo apt-get install libboost-dev libboost-test-dev libboost-program-options-dev libevent-dev automake libtool flex bison pkg-config g++ libssl-dev
-    - wget http://www.us.apache.org/dist/thrift/0.9.1/thrift-0.9.1.tar.gz
-    - tar xfz thrift-0.9.1.tar.gz
-    - cd thrift-0.9.1 && ./configure && sudo make install
-  include:
-    # - language: cpp
-    # - language: csharp
-    # - language: java
-    - language: python
-      script:
-        - python tests/build_test.py
-        # - python3 tests/test_py.py
+os: osx
+
+before_install:
+  - brew install thrift
+  # - brew install (c++)
+  # - brew install (mcs)
+  # - brew install python
+
+language: java
+
+script:
+  - python tests/build_test.py
