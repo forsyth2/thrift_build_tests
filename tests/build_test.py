@@ -45,11 +45,11 @@ class BuildTester(unittest.TestCase):
     #     self.assertEqual(os.system('rm thrift.dll'), 0)
     #     self.assertEqual(os.system('rm generated.dll'), 0)
 
-    def test_java(self):
-        self.assertEqual(os.system(generate_files(JAVA)), 0)
-        self.assertEqual(os.system('javac %s/tests/languages/JavaServer.java' % DIRECTORY), 0)
-        self.assertEqual(os.system(remove_generated_files(JAVA)), 0)
-        self.assertEqual(os.system('rm %s/tests/languages/JavaServer.class' % DIRECTORY), 0)
+    # def test_java(self):
+    #     self.assertEqual(os.system(generate_files(JAVA)), 0)
+    #     self.assertEqual(os.system('javac %s/tests/languages/JavaServer.java' % DIRECTORY), 0)
+    #     self.assertEqual(os.system(remove_generated_files(JAVA)), 0)
+    #     self.assertEqual(os.system('rm %s/tests/languages/JavaServer.class' % DIRECTORY), 0)
 
     def test_python(self):
         self.assertEqual(os.system(generate_files(PYTHON)), 0)

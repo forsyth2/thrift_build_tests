@@ -2,11 +2,11 @@ os: osx
 
 before_install:
   - brew install thrift
-  # - brew install (c++)
-  # - brew install (mcs)
-  # - brew install python
 
-language: java
+language: python
+
+python:
+  "3.6"
 
 script:
   - python tests/build_test.py
